@@ -1,0 +1,158 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    |     
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    |     
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    |     
+    title Document
+    |     
+    style.
+      .addInput div {
+      margin-top: 30px;
+      }
+      .title {
+      -webkit-appearance: none;
+      background-color: #fff;
+      background-image: none;
+      border-radius: 4px;
+      border: 1px solid #dcdfe6;
+      box-sizing: border-box;
+      color: #606266;
+      display: inline-block;
+      font-size: inherit;
+      height: 40px;
+      line-height: 40px;
+      outline: none;
+      padding: 0 15px;
+      }
+      .content {
+      display: block;
+      resize: vertical;
+      padding: 5px 15px;
+      line-height: 1.5;
+      box-sizing: border-box;
+      width: 300px;
+      height: 100px;
+      font-size: inherit;
+      color: #606266;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #dcdfe6;
+      border-radius: 4px;
+      }
+      .addInput div input:focus {
+      outline: none;
+      border-color: #409eff;
+      }
+      .contentContainer {
+      display: flex;
+      }
+      .selectStyle {
+      background-color: #fff;
+      background-image: none;
+      border-radius: 4px;
+      border: 1px solid #dcdfe6;
+      box-sizing: border-box;
+      color: #606266;
+      display: inline-block;
+      font-size: inherit;
+      height: 40px;
+      line-height: 40px;
+      outline: none;
+      padding: 0 15px;
+      width: 200px;
+      }
+      .fileinput-button {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+      background: #409eff;
+      padding: 9px 15px;
+      font-size: 12px;
+      border-radius: 3px;
+      color: white;
+      }
+      .fileinput-button input {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      opacity: 0;
+      font-size: 50px;
+      }
+      .btn {
+      background-color: #409eff;
+      color: white;
+      display: inline-block;
+      line-height: 1;
+      white-space: nowrap;
+      cursor: pointer;
+      border: 1px solid #dcdfe6;
+      -webkit-appearance: none;
+      text-align: center;
+      box-sizing: border-box;
+      outline: none;
+      margin: 0;
+      transition: .1s;
+      font-weight: 500;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      padding: 12px 20px;
+      font-size: 14px;
+      border-radius: 4px;
+      }
+  body
+    .menu-content
+      h1 &#x6DFB;&#x52A0;&#x65B0;&#x95FB;
+      |         
+      form.addInput(method='post', action='/admin/addNews', enctype='multipart/form-data')
+        div
+          | &#x6807;&#x9898;&#xFF1A;
+          input.title(type='text',name="title")
+        |             
+        .contentContainer
+          | &#x5185;&#x5BB9;&#xFF1A;
+          textarea.content(name='content', id='', cols='30', rows='10')
+        |             
+        div
+          | &#x7C7B;&#x578B;&#xFF1A;
+          select.selectStyle(name='type', id='')
+            option(value='逮捕')
+              | &#x902E;&#x6355;
+            |                     
+            option(value='消息')
+              | &#x6D88;&#x606F;
+            |                     
+            option(value='通讯')
+              | &#x901A;&#x8BAF;
+            |                     
+            option(value='文学')
+              | &#x6587;&#x5B66;
+        |             
+        div
+          | &#x56FD;&#x5BB6;&#xFF1A;
+          select.selectStyle(name='country', id='')
+            option(value='美国')
+              | &#x7F8E;&#x56FD;
+            |                     
+            option(value='韩国')
+              | &#x97E9;&#x56FD;
+            |                     
+            option(value='日本')
+              | &#x65E5;&#x672C;
+            |                     
+            option(value='英国')
+              | &#x82F1;&#x56FD;
+        |             
+        .uploadContainer
+          | &#x7F29;&#x7565;&#x56FE;&#xFF1A;
+          span.fileinput-button
+            span &#x4E0A;&#x4F20;&#x56FE;&#x7247;
+            |                     
+            input.imgFile(type='file', name='img')
+        |             
+        div
+          button.btn(type='submit') &#x63D0;&#x4EA4;

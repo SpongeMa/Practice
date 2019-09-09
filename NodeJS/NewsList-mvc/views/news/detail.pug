@@ -1,0 +1,31 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    |     
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    |     
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    |     
+    title Document
+    |     
+    style.
+      .text{
+      width: 640px;
+      margin: 0 auto;
+      }
+      .article-info{
+      color:#999;
+      font-size: 14px;
+      }
+      p{
+      font-size: 16px;
+      line-height: 30px;
+      }
+  body
+    .text
+      h1.title #{detailData.title}
+      |         
+      .article-info  &#x7C7B;&#x578B;&#xFF1A;#{detailData.country} &#x65F6;&#x95F4;&#xFF1A;#{detailData.addTime}
+      |         
+      p.content #{detailData.content}

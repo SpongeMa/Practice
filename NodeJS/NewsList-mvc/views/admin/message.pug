@@ -1,0 +1,28 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    |     
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    |     
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    |     
+    title Document
+  body
+    | #{res.info}
+    br
+    span 5 
+    | &#x79D2;&#x540E;&#x81EA;&#x52A8;&#x8DF3;&#x8F6C;...
+    br
+    a(href='/admin/addNewsTpl') &#x70B9;&#x51FB;&#x6211;&#x76F4;&#x63A5;&#x8DF3;&#x8F6C;
+    script(type='text/javascript').
+      let timer = document.querySelector("span").innerText;
+      //- console.log(timer);
+      timer = parseInt(timer);
+      setInterval(() => {
+      timer--;
+      document.querySelector("span").innerText = timer;
+      if (timer < 1) {
+      window.location.href = `/admin/addNewsTpl`;
+      }
+      }, 1000)

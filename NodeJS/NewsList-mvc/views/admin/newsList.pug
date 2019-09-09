@@ -1,0 +1,89 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    |     
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    |     
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    |     
+    title Document
+    |     
+    style.
+      table {
+      border-left: 1px solid #ebeef5;
+      border-top: 1px solid #ebeef5;
+      margin-top: 40px;
+      width:100%;
+      }
+      table td,
+      th {
+      border-bottom: 1px solid #ebeef5;
+      border-right: 1px solid #ebeef5;
+      }
+      .delBtn {
+      cursor: pointer;
+      }
+      a{
+      text-decoration:none;
+      }
+      .pagination{
+      display: flex;
+      width: 210px;
+      text-align: center;
+      background-color: rgb(252, 238, 238);
+      border-radius: 25px;
+      overflow: hidden;
+      margin: 0 auto;
+      justify-content: center;
+      }
+      .pagination a{
+      width: 30px;
+      line-height: 30px;
+      color: #404040;
+      }
+      .pagination a:nth-child(1) {
+      transform: rotate(-45deg) ;
+      }
+      .next {
+      transform: rotate(45deg) ;
+      }
+      .pagination a:hover{
+      color: rgb(247, 73, 73);
+      }
+  body
+    div
+      table(border='0')
+        tr
+          th &#x6807;&#x9898;
+          |                 
+          th &#x7C7B;&#x578B;
+          |                 
+          th &#x56FD;&#x5BB6;
+          |                 
+          th &#x7F29;&#x7565;&#x56FE;
+          |                 
+          th &#x64CD;&#x4F5C;
+        |
+        each val in renderData             
+          tr
+            td #{val.title}
+            |                 
+            td #{val.type}
+            |                 
+            td #{val.country}
+            |                 
+            td
+              img(width='140px', src=val.imgUrl)
+            |                 
+            td
+              span.delBtn &#x5220;&#x9664;
+          |             
+      .pagination
+        a.prev(href='javascript:;') &ulcorn;
+        |             
+        - for(let i=1;i<=totalPage;i++)
+            a(href='/admin/newsListTpl?p='+i) #{i}
+            |             
+                   
+        a.next(href='javascript:;') &urcorn;
